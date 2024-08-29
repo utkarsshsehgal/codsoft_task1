@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile App Development Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .social-button {
+            background-color: #fff;
+            border: 1px solid;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            flex-grow: 1;
+            margin: 0 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .facebook-button {
+            color: #3b5998;
+            border-color: #3b5998;
+        }
+
+        .twitter-button {
+            color: #1da1f2;
+            border-color: #1da1f2;
+        }
+
+        .social-button img {
+            display: block;
+            margin-bottom: 5px;
+            width: 32px;
+            height: 32px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #0000FF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #87CEEB;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+        }
+
+    </style>
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const termsChecked = document.querySelector('input[name="terms"]').checked;
+
+            if (email === '') {
+                alert('Please enter your email.');
+                return false;
+            }
+
+            const emailPattern = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (password === '') {
+                alert('Please enter your password.');
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return false;
+            }
+
+            if (!termsChecked) {
+                alert('You must agree to the Privacy Policy.');
+                return false;
+            }
+
+            alert('You have signed up successfully!');
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up!</h1>   
+        <p>Please register with email and sign up to continue using our app.</p>
+        
+        <div class="social-buttons">
+            <div class="social-button facebook-button">
+                <img src="Facebook_Logo.png.webp" alt="Facebook Logo">
+                Login with Facebook
+            </div>
+            <div class="social-button twitter-button">
+                <img src="Logo_Twitter.png" alt="Twitter Logo">
+                Login with Twitter
+            </div>
+        </div>
+        <p>or sign up with</p>
+        <form onsubmit="return validateForm()">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <div class="checkbox-label">
+                <input type="checkbox" name="terms">
+                <label for="terms">I agree to the Privacy Policy</a></label>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
