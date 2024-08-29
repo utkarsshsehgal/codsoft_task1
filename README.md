@@ -1,1 +1,3 @@
 # codsoft_task1
+
+#Task1: #Task 1: This project focusses on creating a user-friendly signup flow for a mobile app that will provide a smooth and secure onboarding process. The main features include a shortened signup form with social login choices (Facebook and Twitter) and classic email sign-up. The form also includes necessary validation checks, such as email format, password length, and mandatory acceptance to the Privacy Policy, to ensure that users' information is correct and secure. The overall design is clean and modern, with the goal of increasing user engagement through a rapid, personalised, and error-free signup process
